@@ -10,11 +10,12 @@
     <h1>AngularJSの練習</h1>
     <div ng-controller="MainController">
       <form novalidate name="myForm", ng-submit="addUser()">
-      <p>18+:<input type="checkbox" ng-model="user.adult" ng-true-value="'adult'" ng-false-value="'child'"></p>
-      <p>Phone:
-      <input type="radio" ng-model="user.phone" value="iPhone"> iPhone
-      <input type="radio" ng-model="user.phone" value="Android"> Android
+      
+      <p>Color:
+      <select ng-model="user.color" ng-options="'label:'+color for color in ['red', 'blue', 'pink']" ng-init="user.color='red'"></select>
       </p>
+      
+      <input type="submit" value="add"></p>
       </form>
       <pre>{{user|json}}</pre>
     </div>
